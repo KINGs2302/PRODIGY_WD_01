@@ -6,18 +6,37 @@
     scroll-behavior: smooth;
     font-family: 'Poppins', sans-serif;
 }
+/* Add transparency to the header */
 header {
     position: fixed;
     top: 0;
     left: 0;
     width: 100%;
     padding: 20px 120px;
-    background: #11141a;
+    background: rgba(17, 20, 26, 0.5);
     display: flex;
     justify-content: space-between;
     align-items: center;
     z-index: 100;
+    backdrop-filter: blur(10px);
 }
+
+/* Add backdrop filter to sections */
+section {
+    min-height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: rgba(31, 36, 45, 0.5); 
+    backdrop-filter: blur(10px);
+}
+
+/* Add transition for smooth effect */
+header, section {
+    transition: background-color 0.3s ease, backdrop-filter 0.3s ease;
+}
+
+
 .logo {
     font-size: 25px;
     color: #fff;
@@ -32,10 +51,11 @@ nav a {
     margin-left: 35px;
     transition: .3s;
 }
-nav a:hover,
-nav a.active {
-    color: #0ef;
+nav a.active,
+nav a:hover {
+    color: #0ef; /* Change color when hovered or active */
 }
+
 section {
     min-height: 100vh;
     display: flex;
